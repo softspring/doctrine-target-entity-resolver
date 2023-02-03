@@ -6,7 +6,7 @@ This package provides a class that helps resolve target entities
 [![Latest Unstable Version](https://poser.pugx.org/softspring/doctrine-target-entity-resolver/v/unstable.svg)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
 [![License](https://poser.pugx.org/softspring/doctrine-target-entity-resolver/license.svg)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
 [![Total Downloads](https://poser.pugx.org/softspring/doctrine-target-entity-resolver/downloads)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
-[![Build status](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml/badge.svg?branch=5.0)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml)
+[![Build status](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml/badge.svg?branch=5.1)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml)
 
 # Installation
 
