@@ -9,7 +9,7 @@
         "php": ">=8.1"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "3.51.*",
+        "friendsofphp/php-cs-fixer": "3.51.* || 3.52.*",
         "phpstan/phpstan": "^1.10",
         "symfony/dependency-injection": "^5.4|^6.0|^7.0"
     },
