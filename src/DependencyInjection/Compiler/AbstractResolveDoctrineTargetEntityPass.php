@@ -36,6 +36,6 @@ abstract class AbstractResolveDoctrineTargetEntityPass implements CompilerPassIn
             $resolveTargetEntityListener->addTag('doctrine.event_subscriber');
         }
 
-        $resolveTargetEntityListener->addMethodCall('addResolveTargetEntity', [$interface, $class, [$this->getEntityManagerName($container)]]);
+        $resolveTargetEntityListener->addMethodCall('addResolveTargetEntity', [$interface, $class, [/*$this->getEntityManagerName($container)*/]]);
     }
 }
