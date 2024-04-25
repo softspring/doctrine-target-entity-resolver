@@ -2,6 +2,7 @@
 
 namespace Softspring\Component\DoctrineTargetEntityResolver\DependencyInjection\Compiler;
 
+use ReflectionClass;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
@@ -14,7 +15,7 @@ abstract class AbstractResolveDoctrineTargetEntityPass implements CompilerPassIn
     protected function setTargetEntityFromParameter(string $parameterName, string $interface, ContainerBuilder $container, bool $required = true)
     {
         if ($container->hasParameter($parameterName) && $class = $container->getParameter($parameterName)) {
-            $refClass = new \ReflectionClass($class);
+            $refClass = new ReflectionClass($class);
 
             if (!$refClass->implementsInterface($interface)) {
                 throw new LogicException(sprintf('%s class must implements %s interface', $class, $interface));
