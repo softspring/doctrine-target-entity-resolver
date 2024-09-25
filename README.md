@@ -1,16 +1,15 @@
-This package provides a class that helps resolve target entities
+# Doctrine Target Entity Resolver
 
-*This bundle is under development, more features will be added soon, and existing ones may change.*
+![Latest Stable](https://img.shields.io/packagist/v/softspring/doctrine-target-entity-resolver?label=stable&style=flat-square)
+![Latest Unstable](https://img.shields.io/packagist/v/softspring/doctrine-target-entity-resolver?label=unstable&style=flat-square&include_prereleases)
+![License](https://img.shields.io/packagist/l/softspring/doctrine-target-entity-resolver?style=flat-square)
+![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/doctrine-target-entity-resolver/php?style=flat-square)
+![Downloads](https://img.shields.io/packagist/dt/softspring/doctrine-target-entity-resolver?style=flat-square)
+[![CI](https://img.shields.io/github/actions/workflow/status/softspring/doctrine-target-entity-resolver/php.yml?branch=5.3&style=flat-square&label=CI)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml)
 
-[![Latest Stable Version](https://poser.pugx.org/softspring/doctrine-target-entity-resolver/v/stable.svg)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
-[![Latest Unstable Version](https://poser.pugx.org/softspring/doctrine-target-entity-resolver/v/unstable.svg)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
-[![License](https://poser.pugx.org/softspring/doctrine-target-entity-resolver/license.svg)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
-[![Total Downloads](https://poser.pugx.org/softspring/doctrine-target-entity-resolver/downloads)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
-[![Build status](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml/badge.svg?branch=5.3)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml)
+## Installation
 
-# Installation
-
-## Applications that use Symfony Flex
+### Applications that use Symfony Flex
 
 Open a command console, enter your project directory and execute:
 
