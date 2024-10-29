@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/packagist/l/softspring/doctrine-target-entity-resolver?style=flat-square)
 ![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/doctrine-target-entity-resolver/php?style=flat-square)
 ![Downloads](https://img.shields.io/packagist/dt/softspring/doctrine-target-entity-resolver?style=flat-square)
-[![CI](https://img.shields.io/github/actions/workflow/status/softspring/doctrine-target-entity-resolver/php.yml?branch=5.3&style=flat-square&label=CI)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/php.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/softspring/doctrine-target-entity-resolver/ci.yml?branch=5.3&style=flat-square&label=CI)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/ci.yml)
 
 ## Installation
 
