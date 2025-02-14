@@ -2,7 +2,7 @@
     "name": "softspring/doctrine-target-entity-resolver",
     "description": "This package provides a class that helps resolve target entities",
     "type": "library",
-    "license": "MIT",
+    "license": "AGPL-3.0",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
