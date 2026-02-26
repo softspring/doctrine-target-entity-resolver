@@ -16,20 +16,16 @@ abstract class AbstractResolveDoctrineTargetEntityPass implements CompilerPassIn
     {
         if ($container->hasParameter($parameterName) && $class = $container->getParameter($parameterName)) {
             $refClass = new ReflectionClass($class);
-
             if (!$refClass->implementsInterface($interface)) {
                 throw new LogicException(sprintf('%s class must implements %s interface', $class, $interface));
             }
-
             $this->setTargetEntity($container, $interface, $class);
-        } else {
-            if ($required) {
-                throw new InvalidArgumentException(sprintf('%s parameter must be a valid entity', $parameterName));
-            }
+        } elseif ($required) {
+            throw new InvalidArgumentException(sprintf('%s parameter must be a valid entity', $parameterName));
         }
     }
 
-    private function setTargetEntity(ContainerBuilder $container, string $interface, string $class)
+    private function setTargetEntity(ContainerBuilder $container, string $interface, string $class): void
     {
         $resolveTargetEntityListener = $container->findDefinition('doctrine.orm.listeners.resolve_target_entity');
 
