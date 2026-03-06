@@ -14,7 +14,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php-versions: [ '8.1', '8.2' ]
+                php-versions: [ '8.4' ]
                 composer-prefer: [ '', '--prefer-lowest' ]
 
         steps:
@@ -35,7 +35,7 @@ jobs:
 
             -   name: Cache Composer packages
                 id: composer-cache
-                uses: actions/cache@v4
+                uses: actions/cache@v5
                 with:
                     path: vendor
                     key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
