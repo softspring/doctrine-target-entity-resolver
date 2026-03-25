@@ -7,12 +7,28 @@
 ![Downloads](https://img.shields.io/packagist/dt/softspring/doctrine-target-entity-resolver?style=flat-square)
 [![CI](https://img.shields.io/github/actions/workflow/status/softspring/doctrine-target-entity-resolver/ci.yml?branch=6.0&style=flat-square&label=CI)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/ci.yml)
 
-## Installation
+This package provides a class that helps resolve target entities
 
-### Applications that use Symfony Flex
+## Armonic
 
-Open a command console, enter your project directory and execute:
+This package is part of [Armonic](https://softspring.es/en/armonic).
 
-```console
-$ composer require softspring/doctrine-target-entity-resolver
+## Documentation
+
+[Armonic Documentation](https://armonic.softspring.es/latest/components/doctrine-target-entity-resolver)
+
+## Contributing
+
+Use the standard package commands before sending changes:
+
+```bash
+composer fix
+composer test
+composer test-bc
 ```
+
+[Report issues](https://github.com/softspring/doctrine-target-entity-resolver/issues) and [send Pull Requests](https://github.com/softspring/doctrine-target-entity-resolver/pulls)
+
+## License
+
+This package is free and released under the [AGPL-3.0 license](LICENSE).
