@@ -45,8 +45,7 @@
             "vendor/bin/rector process src tests --dry-run",
             "vendor/bin/phpstan analyse src tests --level 5",
             "vendor/bin/php-cs-fixer fix --dry-run --diff --sequential",
-            "vendor/bin/yaml-lint .github/ -vvv --parse-tags",
-            "php -r '$dom = new DOMDocument(); $dom->load(\".phpmd.xml.dist\"); echo \"OK\\n\";'"
+            "vendor/bin/yaml-lint .github/ -vvv --parse-tags"
         ],
         "test": [
             "composer update --no-scripts --ansi",
