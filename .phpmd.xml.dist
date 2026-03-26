@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="DoctrineTargetEntityResolver"
+         xmlns="https://pmd.github.io/schema/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://pmd.github.io/schema/ruleset/1.0.0 https://pmd.github.io/schema/ruleset_1_0_0.xsd">
+    <description>PHPMD rules for doctrine-target-entity-resolver code scanning.</description>
+
+    <rule ref="rulesets/codesize.xml"/>
+</ruleset>

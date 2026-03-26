@@ -4,14 +4,16 @@
     "license": "AGPL-3.0-or-later",
     "type": "library",
     "require": {
-        "php": ">=8.4"
+        "php": ">=8.4",
+        "symfony/dependency-injection": "^6.4 || ^7.4 || ^8.0"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.50",
         "friendsofphp/php-cs-fixer": "^3.94",
+        "phpunit/phpunit": "^12.5",
         "phpstan/phpstan": "^2.1",
         "rector/rector": "^2.3",
-        "symfony/dependency-injection": "^6.4 || ^7.4 || ^8.0"
+        "symfony/yaml": "^6.4 || ^7.4 || ^8.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -42,10 +44,9 @@
             "XDEBUG_MODE=coverage vendor/bin/phpunit",
             "vendor/bin/rector process src tests --dry-run",
             "vendor/bin/phpstan analyse src tests --level 5",
-            "vendor/bin/php-cs-fixer fix --dry-run --diff",
+            "vendor/bin/php-cs-fixer fix --dry-run --diff --sequential",
             "vendor/bin/yaml-lint .github/ -vvv --parse-tags",
-            "vendor/bin/yaml-lint config/ -vvv --parse-tags",
-            "vendor/bin/yaml-lint translations/ -vvv --parse-tags"
+            "php -r '$dom = new DOMDocument(); $dom->load(\".phpmd.xml.dist\"); echo \"OK\\n\";'"
         ],
         "test": [
             "composer update --no-scripts --ansi",

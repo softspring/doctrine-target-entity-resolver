@@ -14,8 +14,8 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php-versions: [ '8.4' ]
-                composer-prefer: [ '', '--prefer-lowest' ]
+                php-version: [ '8.4' ]
+                composer-prefer: [ '', '--prefer-lowest --prefer-stable' ]
 
         steps:
             -   uses: actions/checkout@v6
@@ -23,40 +23,44 @@ jobs:
             -   name: Install PHP
                 uses: shivammathur/setup-php@v2
                 with:
-                    php-version: ${{ matrix.php-versions }}
-                    #                  extensions: intl #optional
-                    ini-values: "post_max_size=256M" #optional
+                    php-version: ${{ matrix.php-version }}
+                    coverage: xdebug
+                    tools: composer:v2
 
-            -   name: Check PHP Version
-                run: php -v
-
-            -   name: Validate composer.json and composer.lock
-                run: composer validate --strict
+            -   name: Validate composer.json
+                run: composer validate --strict --no-check-lock
 
             -   name: Cache Composer packages
-                id: composer-cache
                 uses: actions/cache@v5
                 with:
                     path: vendor
-                    key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+                    key: ${{ runner.os }}-php-${{ matrix.php-version }}-${{ matrix.composer-prefer }}-${{ hashFiles('**/composer.lock') }}
                     restore-keys: |
-                        ${{ runner.os }}-php-
+                        ${{ runner.os }}-php-${{ matrix.php-version }}-
 
             -   name: Install dependencies
                 run: composer update --prefer-dist --no-interaction --no-progress ${{ matrix.composer-prefer }}
 
-            -   name: Run phpstan
-                run: ./vendor/bin/phpstan analyse
+            -   name: Run tests
+                run: XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-clover=clover.xml
 
-            #            -   name: Run tests
-            #                run: ./vendor/bin/phpunit --coverage-text --coverage-html=.phpunit.cache/html-report
+            -   name: Run PHPStan
+                run: ./vendor/bin/phpstan analyse src tests --level 5 --debug
 
-            -   name: Code Style check
-                run: ./vendor/bin/php-cs-fixer fix -v --diff --dry-run
+            -   name: Run Rector
+                run: ./vendor/bin/rector process src tests --dry-run --debug
 
-#            -   name: phpunit-coverage-badge
-#                uses: timkrase/phpunit-coverage-badge@v1.2.1
-#                with:
-#                    push_badge: true
-#                    coverage_badge_path: .github/badges/coverage.svg
-#                    repo_token: ${{ secrets.GITHUB_TOKEN }}
+            -   name: Run PHP CS Fixer
+                run: ./vendor/bin/php-cs-fixer fix --dry-run --diff --sequential
+
+            -   name: Lint YAML files
+                run: ./vendor/bin/yaml-lint .github/ -vvv --parse-tags
+
+            -   name: Validate PHPMD ruleset
+                run: php -r '$dom = new DOMDocument(); $dom->load(".phpmd.xml.dist"); echo "OK\n";'
+
+            -   name: Upload coverage to Codecov
+                uses: codecov/codecov-action@v5
+                with:
+                    files: clover.xml
+                    token: ${{ secrets.CODECOV_TOKEN }}

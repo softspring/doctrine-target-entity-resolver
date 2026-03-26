@@ -1,13 +1,14 @@
 # Doctrine Target Entity Resolver
 
-![Latest Stable](https://img.shields.io/packagist/v/softspring/doctrine-target-entity-resolver?label=stable&style=flat-square)
-![Latest Unstable](https://img.shields.io/packagist/v/softspring/doctrine-target-entity-resolver?label=unstable&style=flat-square&include_prereleases)
-![License](https://img.shields.io/packagist/l/softspring/doctrine-target-entity-resolver?style=flat-square)
-![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/doctrine-target-entity-resolver/php?style=flat-square)
-![Downloads](https://img.shields.io/packagist/dt/softspring/doctrine-target-entity-resolver?style=flat-square)
+[![Latest Stable](https://img.shields.io/packagist/v/softspring/doctrine-target-entity-resolver?label=stable&style=flat-square)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
+[![Latest Unstable](https://img.shields.io/packagist/v/softspring/doctrine-target-entity-resolver?label=unstable&style=flat-square&include_prereleases)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
+[![License](https://img.shields.io/packagist/l/softspring/doctrine-target-entity-resolver?style=flat-square)](LICENSE)
+[![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/doctrine-target-entity-resolver/php?style=flat-square)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
+[![Downloads](https://img.shields.io/packagist/dt/softspring/doctrine-target-entity-resolver?style=flat-square)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
 [![CI](https://img.shields.io/github/actions/workflow/status/softspring/doctrine-target-entity-resolver/ci.yml?branch=6.0&style=flat-square&label=CI)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/ci.yml)
+[![Coverage](https://codecov.io/gh/softspring/doctrine-target-entity-resolver/branch/6.0/graph/badge.svg)](https://codecov.io/gh/softspring/doctrine-target-entity-resolver)
 
-This package provides a class that helps resolve target entities
+Helpers to register Doctrine target entity resolution from reusable Symfony bundles.
 
 ## Armonic
 
@@ -19,15 +20,13 @@ This package is part of [Armonic](https://softspring.es/en/armonic).
 
 ## Contributing
 
-Use the standard package commands before sending changes:
-
-```bash
-composer fix
-composer test
-composer test-bc
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 [Report issues](https://github.com/softspring/doctrine-target-entity-resolver/issues) and [send Pull Requests](https://github.com/softspring/doctrine-target-entity-resolver/pulls)
+
+## Security
+
+See [SECURITY.md](SECURITY.md).
 
 ## License
 
