@@ -60,7 +60,7 @@ jobs:
                 run: php -r '$dom = new DOMDocument(); $dom->load(".phpmd.xml.dist"); echo "OK\n";'
 
             -   name: Upload coverage to Codecov
-                uses: codecov/codecov-action@v5
+                uses: codecov/codecov-action@v6
                 with:
                     files: clover.xml
                     token: ${{ secrets.CODECOV_TOKEN }}
