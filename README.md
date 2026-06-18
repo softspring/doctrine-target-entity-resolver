@@ -6,7 +6,7 @@
 [![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/doctrine-target-entity-resolver/php?style=flat-square)](https://github.com/softspring/doctrine-target-entity-resolver/blob/6.0/composer.json)
 [![Downloads](https://img.shields.io/packagist/dt/softspring/doctrine-target-entity-resolver?style=flat-square)](https://packagist.org/packages/softspring/doctrine-target-entity-resolver)
 [![CI](https://img.shields.io/github/actions/workflow/status/softspring/doctrine-target-entity-resolver/ci.yml?branch=6.0&style=flat-square&label=CI)](https://github.com/softspring/doctrine-target-entity-resolver/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/codecov/c/github/softspring/doctrine-target-entity-resolver?branch=6.0&style=flat-square)](https://codecov.io/gh/softspring/doctrine-target-entity-resolver)
+[![Coverage](https://img.shields.io/codecov/c/github/softspring/doctrine-target-entity-resolver?branch=6.0&style=flat-square)](https://app.codecov.io/gh/softspring/doctrine-target-entity-resolver/tree/6.0)
 
 Helpers to register Doctrine target entity resolution from reusable Symfony bundles.
 
