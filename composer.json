@@ -12,7 +12,8 @@
         "friendsofphp/php-cs-fixer": "^3.94",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^12.5",
-        "rector/rector": "^2.3",
+        "rector/rector": "^2.6.7",
+        "symfony/polyfill-php85": "^1.33",
         "symfony/yaml": "^6.4 || ^7.4 || ^8.0"
     },
     "minimum-stability": "dev",

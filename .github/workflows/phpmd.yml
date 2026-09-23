@@ -6,14 +6,14 @@ on:
     pull_request:
         branches: [ 6.0 ]
     schedule:
-        - cron: '35 13 * * 4'
+        -   cron: '35 13 * * 4'
 
 permissions:
     contents: read
 
 jobs:
-    phpmd:
-        name: Run PHPMD scanning
+    PHPMD:
+        name: Run PHPMD SARIF scan
         runs-on: ubuntu-latest
         permissions:
             contents: read
@@ -24,7 +24,7 @@ jobs:
             -   name: Checkout code
                 uses: actions/checkout@v6
 
-            -   name: Setup PHP
+            -   name: Setup PHP and PHPMD
                 uses: shivammathur/setup-php@v2
                 with:
                     coverage: none
@@ -34,7 +34,23 @@ jobs:
                 run: phpmd src sarif .phpmd.xml.dist --reportfile phpmd-results.sarif
                 continue-on-error: true
 
+            -   name: Validate SARIF report
+                id: validate_sarif
+                if: always()
+                run: |
+                    if [ ! -s phpmd-results.sarif ]; then
+                        echo "valid=false" >> "$GITHUB_OUTPUT"
+                        exit 0
+                    fi
+
+                    if jq empty phpmd-results.sarif; then
+                        echo "valid=true" >> "$GITHUB_OUTPUT"
+                    else
+                        echo "valid=false" >> "$GITHUB_OUTPUT"
+                    fi
+
             -   name: Upload analysis results to GitHub
+                if: steps.validate_sarif.outputs.valid == 'true'
                 uses: github/codeql-action/upload-sarif@v4
                 with:
                     sarif_file: phpmd-results.sarif
